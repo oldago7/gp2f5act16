@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taula</title>
+</head>
+<body>
+                        <h3>Formulari</h3>
+                        <form action="EX1.php" method="post">
+                                <!--Codi personal-->
+                                <label for="codi">Codi personal:</label>
+                                <input type="number" name="codi" id="codi">
+                                <br>
+                                <!--CPUs-->
+                                <p>Quantitat de CPUs <u>(1€/mes per CPU)</u></p>
+                                <select name="cpu">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>4</option>
+                                        <option>8</option>
+                                </select>
+                                <br>
+                                <!--Tipus CPU-->
+                                <p>Tipus de CPU<br/>
+                                        <input type="radio" name="cpu_tipus" value="intel"/>Intel (2€/mes)<br/>
+                                        <input type="radio" name="cpu_tipus" value="amd"/>AMD(1€/mes)
+                                </p>
+                                <!--RAM-->
+                                <p>Quantitat de RAM <u>(0,1€/mes per GiB)</u></p>
+                                <select name="ram">
+                                        <option>1GiB</option>
+                                        <option>2GiB</option>
+                                        <option>4GiB</option>
+                                        <option>8GiB</option>
+                                        <option>16GiB</option>
+                                </select>
+                                <br>
+                                <!--SSD-->
+                                <p>Capacitat del disc dur SSD <u>(0,1€/mes per 10 GiB)</u></p>
+                                <select name="ssd">
+                                        <option>10GiB</option>
+                                        <option>20GiB</option>
+                                        <option>40GiB</option>
+                                        <option>80GiB</option>
+                                </select>
+                                <br>
+                                <!--Sistema Operatiu-->
+                                <p>Sistema operatiu<br/>
+                                        <input type="radio" name="sistema_operatiu" value="Debian 10"/> Debian 10 (1€/mes)<br/>
+                                        <input type="radio" name="sistema_operatiu" value="Windows 2019 Std."/> Windows 2019 Std. (5€/mes)
+                                </p>
+                                <!--Ip-->
+                                <p>IP fixa<br/>
+                                        <input type="radio" name="ip" value="Sí"/>Sí (2€/mes)<br/>
+                                        <input type="radio" name="ip" value="No"/>No (0€/mes)
+                                </p>
+                                <!--Tipus accés-->
+                                <p>Tipus d'accés</p>
+                                <select name="acces">
+                                        <option>SSH (0€/mes)</option>
+                                        <option>Consola web (1€/mes)</option>
+                                        <option>SSH i consola web (2€/més)</option>
+                                </select>
+                                <br>
+                                <br>
+                                <input type="submit" value="Calcula">
+                        </form>
+</body>
+</html>
