@@ -1,5 +1,5 @@
 <!--app_gp2f5act16-->
-<!--Aplicació Versió 2.0-->
+<!--Aplicació Versió 2.1-->
 <?php
         function PreuMaquina($cpu,$cpu_tipus,$ram,$ssd,$sistema_operatiu,$ip,$acces) {
                 $suma = $cpu_tipus+$sistema_operatiu+$ip+$cpu+$ram+$ssd+$acces;
