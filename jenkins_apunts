@@ -1,0 +1,25 @@
+ssh vagrant@(ip nostra) 'echo "Crea una nova imatge"'
+ssh vagrant@172.17.0.1 'cd projecte/docs && mv VERSIO_ACTUAL VERSIO ANTERIOR'
+ssh vagrant@172.17.0.1 'cd projecte/docs && cat README | grep Versió | cut -d " " -f 2 > VERSIO_ACTUAL'
+ssh vagrant@172.17.0.1 'cd projecte && docker build -t gp2f5act16:$(cat docs/VERSIO_ACTUAL) .'
+exit
+
+dins de projecte (app Dockerfile docs downloads)
+dins de docs (VERSIO_ACTUAL VERSIO_ANTERIOR README)
+README (
+Autor:
+Aplicació:
+Versió: (convenient que sigui 2.algo(no pot ser .0))
+Data:
+Hora:)
+VERSIO_ACTUAL i VERSIO_ANTERIOR (en blanc)
+
+ssh vagrant@172.17.0.1 'echo "Inicia nou contenidor i atura antic"'
+ssh vagrant@172.17.0.1 'docker stop gp2f5act16v$(cat projecte/docs/VERSIO_ANTERIOR)'
+ssh vagrant@172.17.0.1 'docker run --name gp2f5act16v$(cat projecte/docs/VERSIO_ACTUAL) -i -t -d -p 80:80 gp2f5act16:$(cat projecte/docs/VERSIO_ACTUAL)'
+exit 0
+
+ssh vagrant@172.17.0.1 'echo "Esborra imatge i contenidor antics"'
+ssh vagrant@172.17.0.1 'docker rm gp2f5act16v$(cat projecte/docs/VERSIO_ANTERIOR)'
+ssh vagrant@172.17.0.1 'docker rmi gp2f5act16:$(cat projecte/docs/VERSIO_ANTERIOR)'
+exit 0
