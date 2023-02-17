@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app_gp2f5act16:
+  app:
     image: app_gp2f5act16:2.2
     expose:
       - "80"
@@ -11,6 +11,6 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      - app_gp2f5act16
+      - app
     ports:
       - "80:80"
