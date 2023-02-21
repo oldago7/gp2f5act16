@@ -1,11 +1,12 @@
 <!--app_gp2f5act16-->
 <!--Aplicació Versió 2.3-->
 <?php
-        function PreuMaquina($cpu,$cpu_tipus,$ram,$ssd,$sistema_operatiu,$ip,$acces,$tipus_maquina,$banda_maxima,$manteniment) {
+        function PreuMaquina($cpu,$cpu_tipus,$ram,$ssd,$sistema_operatiu,$ip,$acces,$tipus_maquina,$banda_maxima,$compromis) {
                 $suma = $cpu_tipus+$sistema_operatiu+$ip+$cpu+$ram+$ssd+$acces+$tipus_maquina+$banda_maxima;
-		if ($manteniment=='true'){
-			$preu=$suma*10/100;
-			echo "El preu total és :$preu €/mes";
+		if ($compromis){
+			$porcentaje=$suma*10/100;
+                        $preu=$suma-$porcentaje;
+			echo "El preu total és: $preu €/mes";
 			}
 		else{
 			echo "El preu total és: $suma €/mes";
@@ -30,5 +31,5 @@
                         // fwrite($fp, $fh."\n");
                         // fclose($fp);
         }
-        echo PreuMaquina($_GET['cpu'],$_GET['cpu_tipus'],$_GET['ram'],$_GET['ssd'],$_GET['sistema_operatiu'],$_GET['ip'],$_GET['acces'],$_GET['tipus_maquina'],$_GET['banda_maxima'],$_GET['manteniment']);
+        PreuMaquina($_GET['cpu'],$_GET['cpu_tipus'],$_GET['ram'],$_GET['ssd'],$_GET['sistema_operatiu'],$_GET['ip'],$_GET['acces'],$_GET['tipus_maquina'],$_GET['banda_maxima'],empty($_GET['compromis'])?false:true);
 ?> 

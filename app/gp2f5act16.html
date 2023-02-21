@@ -13,11 +13,11 @@
                         <form action="gp2f5act16.php" method="get">
                                 <!--Codi personal-->
                                 <label for="codi">Codi personal:</label>
-                                <input type="numeric" name="codi" id="codi" maxlength="9">
+                                <input type="numeric" name="codi" id="codi" maxlength="9" required>
                                 <br>
                                 <!--CPUs-->
                                 <p>Quantitat de CPUs <u>(1€/mes per CPU)</u></p>
-                                <select name="cpu">
+                                <select name="cpu" required>
                                         <option  value="1">1</option>
                                         <option  value="2">2</option>
                                         <option  value="4">4</option>
@@ -26,12 +26,12 @@
                                 <br>
                                 <!--Tipus CPU-->
                                 <p>Tipus de CPU<br/>
-                                        <input type="radio" name="cpu_tipus" value="2"/>Intel (2€/mes)<br/>
-                                        <input type="radio" name="cpu_tipus" value="1"/>AMD(1€/mes)
+                                        <input type="radio" name="cpu_tipus" value="2" required/>Intel (2€/mes)<br/>
+                                        <input type="radio" name="cpu_tipus" value="1" required/>AMD(1€/mes)
                                 </p>
                                 <!--RAM-->
                                 <p>Quantitat de RAM <u>(0,1€/mes per GiB)</u></p>
-                                <select name="ram">
+                                <select name="ram" required>
                                         <option type="numeric" value="0.1">1GiB</option>
                                         <option type="numeric" value="0.2">2GiB</option>
                                         <option type="numeric" value="0.4">4GiB</option>
@@ -41,7 +41,7 @@
                                 <br>
                                 <!--SSD-->
                                 <p>Capacitat del disc dur SSD <u>(0,1€/mes per 10 GiB)</u></p>
-                                <select name="ssd">
+                                <select name="ssd" required>
                                         <option type="numeric" value="0.1">10GiB</option>
                                         <option type="numeric" value="0.2">20GiB</option>
                                         <option type="numeric" value="0.4">40GiB</option>
@@ -50,13 +50,13 @@
                                 <br>
                                 <!--Sistema Operatiu-->
                                 <p>Sistema operatiu<br/>
-                                        <input type="radio" name="sistema_operatiu" value="1"/> Debian 10 (1€/mes)<br/>
-                                        <input type="radio" name="sistema_operatiu" value="5"/> Windows 2019 Std. (5€/mes)
+                                        <input type="radio" name="sistema_operatiu" value="1" required/> Debian 10 (1€/mes)<br/>
+                                        <input type="radio" name="sistema_operatiu" value="5" required/> Windows 2019 Std. (5€/mes)
                                 </p>
                                 <!--Ip-->
                                 <p>IP fixa<br/>
-                                        <input type="radio" name="ip" value="2"/>Sí (2€/mes)<br/>
-                                        <input type="radio" name="ip" value="0"/>No (0€/mes)
+                                        <input type="radio" name="ip" value="2" required/>Sí (2€/mes)<br/>
+                                        <input type="radio" name="ip" value="0" required/>No (0€/mes)
                                 </p>
                                 <!--Tipus accés-->
                                 <p>Tipus d'accés</p>
@@ -68,22 +68,19 @@
                                 <br>
                                 <!--Màquina-->
                                 <p>Tipus de Màquina<br/>
-                                        <input type="radio" name="tipus_maquina" value="0"/> Màquina Virtual sobre equip compartit (0€/mes)<br/>
-                                        <input type="radio" name="tipus_maquina" value="10"/> Màquina Física no compartida (10€/mes)
+                                        <input type="radio" name="tipus_maquina" value="0" required/> Màquina Virtual sobre equip compartit (0€/mes)<br/>
+                                        <input type="radio" name="tipus_maquina" value="10" required/> Màquina Física no compartida (10€/mes)
                                 </p>
-                                <br>
                                 <!--Banda Máxima-->
                                 <p>Amplada de Banda màxima<br/>
-                                        <input type="radio" name="banda_maxima" value="0"/> 100Mbps (0€/mes)<br/>
-                                        <input type="radio" name="banda_maxima" value="3"/> 500Mbps (3€/mes)<br/>
-					<input type="radio" name="banda_maxima" value="5"/> 1000Mbps (5€/mes)<br/>
-					<input type="radio" name="banda_maxima" value="6"/> 2000Mbps (6€/mes)
+                                        <input type="radio" name="banda_maxima" value="0" required/> 100Mbps (0€/mes)<br/>
+                                        <input type="radio" name="banda_maxima" value="3" required/> 500Mbps (3€/mes)<br/>
+					<input type="radio" name="banda_maxima" value="5" required/> 1000Mbps (5€/mes)<br/>
+					<input type="radio" name="banda_maxima" value="6" required/> 2000Mbps (6€/mes)
                                 </p>
-
-                                <br>
                                 <!--Compromís de manteniment-->
                                 <p>Compromís de manteniment<br/>
-                                        <input type="radio" name="compromis" value="true"/> 1 Any de manteniment (10% de descompte)<br/>
+                                        <input type="checkbox" name="compromis" value="1"/> 1 Any de manteniment (10% de descompte)<br/>
 				</p>
 
                                 <input type="submit" value="Calcula">
