@@ -1,5 +1,5 @@
 <!--app_gp2f5act16-->
-<!--Aplicació Versió 2.0-->
+<!--Aplicació Versió 2.1-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +65,11 @@
                                         <option value="1">Consola web (1€/mes)</option>
                                         <option value="2">SSH i consola web (2€/més)</option>
                                 </select>
+                                <!--Màquina-->
+                                <p>Tipus de Màquina<br/>
+                                        <input type="radio" name="tipus_maquina" value="0" required/> Màquina Virtual sobre equip compartit (0€/mes)<br/>
+                                        <input type="radio" name="tipus_maquina" value="10" required/> Màquina Física no compartida (10€/mes)
+                                </p>
                                 <br>
                                 <input type="submit" value="Calcula">
                         </form>
